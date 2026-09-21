@@ -24,13 +24,10 @@ jobs:
           distribution: 'temurin'
 
       - name: Build mod with Gradle
-        run: |
-          ls -la
-          cd alexdim
-          ./gradlew build
+        run: gradle build
 
       - name: Upload jar artifact
         uses: actions/upload-artifact@v4
         with:
           name: mod-jar
-          path: alexdim/build/libs/*.jar
+          path: build/libs/*.jar
